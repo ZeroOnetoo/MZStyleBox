@@ -19,8 +19,8 @@
 - (instancetype)initWithFrame:(CGRect)frame Arrange:(NSInteger)arrange Rank:(NSInteger)rank{
     self = [super initWithFrame:frame];
     if (self) {
-        _arrange = arrange;
-        _rank = rank;
+        _arrange = arrange; //列数
+        _rank = rank;       //行数
         [self creatUI];
     }
     return self;
@@ -47,7 +47,8 @@
     [super layoutSubviews];
     _layout.minimumInteritemSpacing = self.interitemSpacing;
     _layout.minimumLineSpacing = self.lineSpacing;
-    _layout.sectionInset = self.ViewEdgeInsets;;
+    _layout.sectionInset = self.ViewEdgeInsets;
+    _collect.backgroundColor = self.backgroundColor;
 }
 #pragma mark - collectView delegate
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
